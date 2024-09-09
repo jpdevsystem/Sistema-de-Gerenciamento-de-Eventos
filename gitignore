@@ -1,0 +1,16 @@
+
+### `gitignore`
+
+```gitignore
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de configuração do ambiente de desenvolvimento
+.env
+
+# Ignorar banco de dados local
+*.sql
+*.db
+
+# Ignorar diretórios de backup
+backup/
