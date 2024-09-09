@@ -1,0 +1,53 @@
+# Sistema de Gerenciamento de Eventos
+
+## Descrição do Projeto
+Este projeto consiste na criação de um sistema de gerenciamento de eventos, participantes e inscrições utilizando SQL. O sistema permite armazenar, consultar, atualizar e excluir dados de eventos e participantes, além de gerenciar as inscrições de participantes para os eventos.
+
+## Funcionalidades
+- **Criação do Banco de Dados e Tabelas**: Banco de dados que armazena eventos, participantes e suas inscrições.
+- **Inserção de Dados**: Inserção de registros de eventos, participantes e inscrições.
+- **Consultas**:
+  - Listar todos os eventos disponíveis.
+  - Consultar todos os participantes inscritos em um evento específico.
+  - Consultar todos os eventos nos quais um determinado participante está inscrito.
+- **Atualização de Dados**:
+  - Atualização de informações dos eventos (data e local).
+  - Atualização de informações de contato dos participantes.
+- **Exclusão de Dados**:
+  - Exclusão de eventos (incluindo exclusão prévia de inscrições associadas).
+  - Cancelamento de inscrições de participantes em eventos.
+  - Exclusão de participantes inscritos em mais de um evento.
+
+## Estrutura do Projeto
+
+### Tabelas Criadas
+1. **Eventos**
+   - `EventoID`: ID do evento (chave primária, autoincremento)
+   - `NomeEvento`: Nome do evento
+   - `DataEvento`: Data do evento
+   - `LocalEvento`: Local do evento
+   - `Descricao`: Descrição do evento
+
+2. **Participantes**
+   - `ParticipanteID`: ID do participante (chave primária, autoincremento)
+   - `NomeParticipante`: Nome do participante
+   - `Email`: E-mail do participante
+   - `Telefone`: Telefone do participante
+
+3. **Inscricoes**
+   - `InscricaoID`: ID da inscrição (chave primária, autoincremento)
+   - `EventoID`: Referência ao evento (chave estrangeira)
+   - `ParticipanteID`: Referência ao participante (chave estrangeira)
+   - `DataInscricao`: Data em que a inscrição foi realizada
+
+## Comandos Principais
+
+### Criar o Banco de Dados e Tabelas
+```sql
+CREATE DATABASE GerenciamentoEventos;
+
+USE GerenciamentoEventos;
+
+CREATE TABLE Eventos (...);
+CREATE TABLE Participantes (...);
+CREATE TABLE Inscricoes (...);
